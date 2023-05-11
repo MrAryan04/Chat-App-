@@ -30,7 +30,7 @@ class _HomePageState extends State<HomePage> {
         elevation: 0,
         title: Text(
           'Homepage',
-          style: TextStyle(color: Colors.black, fontSize: 25),
+          style: TextStyle(color: Colors.black, fontSize: 24),
         ),
         // actions: [
         //   IconButton(
@@ -80,7 +80,7 @@ class _HomePageState extends State<HomePage> {
       //     ),
       //   ],
       //   onTap: (Index) => setState(() => this._selectedIndex = Index ),
-      
+
       //   // onTap: _onItemTapped,
       // ),
       // body: IndexedStack(
