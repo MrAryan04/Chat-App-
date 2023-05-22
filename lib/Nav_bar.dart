@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:fyp/Home.dart';
 import 'package:fyp/chat.dart';
+import 'package:fyp/chatpage.dart';
 import 'package:fyp/setting.dart';
 
 class Navbar extends StatefulWidget {
@@ -14,7 +15,8 @@ class _NavbarState extends State<Navbar> {
   int selectedIndex = 0;
   final screen = [
     const HomePage(),
-    const ChatPage(),
+    // const ChatPage(),
+    ChatScreen(),
     const ProfileScreen(),
 
   ];

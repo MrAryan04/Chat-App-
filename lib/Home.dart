@@ -4,8 +4,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:fyp/chat.dart';
+import 'package:fyp/chatpage.dart';
+import 'package:fyp/pages/Post/Add_post.dart';
+import 'package:fyp/pages/Post/View_post.dart';
 import 'package:fyp/pages/call.dart';
 import 'package:fyp/setting.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -18,90 +22,123 @@ class _HomePageState extends State<HomePage> {
   int _selectedIndex = 0;
   final screen = [
     const HomePage(),
-    const ChatPage(),
+    // const ChatPage(),
+    ChatScreen(),
     const ProfileScreen(),
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.transparent,
-        elevation: 0,
-        title: Text(
-          'Homepage',
-          style: TextStyle(color: Colors.black, fontSize: 24),
-        ),
-        // actions: [
-        //   IconButton(
-        //       onPressed: () {
-        //         Navigator.push(
-        //           context,
-        //           MaterialPageRoute(
-        //               builder: (context) => const ProfileScreen()),
-        //         );
-        //       },
-        //       icon: Icon(
-        //         Icons.settings,
-        //         size: 20,
-        //         color: Colors.black,
-        //       ))
-        // ],
-      ),
-      //  body: Center(child: Column(
-      //   mainAxisAlignment: MainAxisAlignment.center,
-      //   children:[
-      //     MaterialButton(onPressed: (){
-      //       FirebaseAuth.instance.signOut();
-      //     },
-      //     color: Colors.blue,
-      //     child: Text('Sign Out'),
-      //     )
-      //   ]
-      //  ),
-      //  )
-
-      // bottomNavigationBar: BottomNavigationBar(
-      //   type: BottomNavigationBarType.fixed,
-      //   currentIndex: _selectedIndex,
-      //   // backgroundColor: Colors.grey[300],
-      //   items: const[
-      //     BottomNavigationBarItem(
-      //       icon: Icon(Icons.home),
-      //       label: 'Home',
-      //     ),
-      //     BottomNavigationBarItem(
-      //       icon: Icon(Icons.chat),
-      //       label: 'Chat',
-      //     ),
-      //     BottomNavigationBarItem(
-      //       icon: Icon(Icons.person),
-      //       label: 'Profile',
-      //     ),
-      //   ],
-      //   onTap: (Index) => setState(() => this._selectedIndex = Index ),
-
-      //   // onTap: _onItemTapped,
-      // ),
-      // body: IndexedStack(
-      //   index: _selectedIndex,
-      //   children: _widgetOptions,
-      // ),
-      body: Container(
-        child: ElevatedButton(
-          onPressed: () {
-            Navigator.of(context).push(
-                MaterialPageRoute(builder: (context) => MyCall(callID: "1")));
-          },
-          child: const Text('Join Call'),
-          style: ElevatedButton.styleFrom(
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(10),
-            ),
-            elevation: 5,
-          ),
-        ),
-      ),
-    );
+       
+     
+        body: ViewPostListView(),
+            //  Container(
+            //   child: ElevatedButton(
+            //     onPressed: () {
+            //       Navigator.of(context)
+            //           .push(MaterialPageRoute(builder: (context) => AddPostPage()));
+            //     },
+            //     child: const Text('Add Post'),
+            //     style: ElevatedButton.styleFrom(
+            //       shape: RoundedRectangleBorder(
+            //         borderRadius: BorderRadius.circular(10),
+            //       ),
+            //       elevation: 5,
+            //     ),
+            //   ),
+            // ),
+        //     GestureDetector(
+        //   onTap: () {
+        //     Navigator.of(context)
+        //         .push(MaterialPageRoute(builder: (context) => AddPostPage()));
+        //   },
+        //   child: Container(
+        //     width: 70.0,
+        //     height: 70.0,
+        //     decoration: BoxDecoration(
+        //       color: Colors.grey[300],
+        //       borderRadius: BorderRadius.circular(10.0),
+        //     ),
+        //     child: Column(
+        //       mainAxisAlignment: MainAxisAlignment.center,
+        //       children: <Widget>[
+        //         Icon(
+        //           Icons.add,
+        //           // size: 50.0,
+        //           color: Colors.blue,
+        //         ),
+        //         SizedBox(height: 10.0),
+        //         Text(
+        //           'Add Post',
+        //           style: TextStyle(
+        //             // fontSize: 20.0,
+        //             fontWeight: FontWeight.bold,
+        //           ),
+        //         ),
+        //       ],
+        //     ),
+        //   ),
+        // )
+        );
   }
 }
+
+// import 'package:flutter/material.dart';
+// import 'package:firebase_core/firebase_core.dart';
+
+// void main() {
+//   WidgetsFlutterBinding.ensureInitialized();
+//   Firebase.initializeApp();
+//   runApp(MyApp());
+// }
+
+// class MyApp extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//       title: 'Flutter and Firebase Homepage',
+//       theme: ThemeData(
+//         primarySwatch: Colors.blue,
+//       ),
+//       home: MyHomePage(),
+//     );
+//   }
+// }
+
+// class MyHomePage extends StatefulWidget {
+//   @override
+//   _MyHomePageState createState() => _MyHomePageState();
+// }
+
+// class _MyHomePageState extends State<MyHomePage> {
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(
+//         title: Text('Flutter and Firebase Homepage'),
+//       ),
+//       body: Center(
+//         child: Column(
+//           mainAxisAlignment: MainAxisAlignment.center,
+//           children: <Widget>[
+//             Text('Welcome to the Flutter and Firebase Homepage!'),
+//             SizedBox(height: 20),
+//             NavigationBar(
+//               items: [
+//                 NavigationBarItem(
+//                   icon: Icon(Icons.home),
+//                   label: 'Home',
+//                 ),
+//                 NavigationBarItem(
+//                   icon: Icon(Icons.settings),
+//                   label: 'Settings',
+//                 ),
+//               ],
+//             ),
+//           ],
+//         ),
+//       ),
+//     );
+//   }
+// }
