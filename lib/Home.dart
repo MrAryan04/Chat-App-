@@ -18,21 +18,6 @@ class HomePage extends StatefulWidget {
   State<HomePage> createState() => _HomePageState();
 }
 
-class _HomePageState extends State<HomePage> {
-  int _selectedIndex = 0;
-  final screen = [
-    const HomePage(),
-    // const ChatPage(),
-    ChatScreen(),
-    const ProfileScreen(),
-  ];
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-       
-     
-        body: ViewPostListView(),
             //  Container(
             //   child: ElevatedButton(
             //     onPressed: () {
